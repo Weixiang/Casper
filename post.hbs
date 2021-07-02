@@ -69,23 +69,41 @@ into the {body} tag of the default.hbs template --}}
         {{content}}
     </section>
 
-    
-    <section class="article-comments gh-canvas">
-        <div id="disqus_thread"></div>
-        <script>
-            var disqus_config = function () {
-                this.page.url = "{{url absolute="true"}}";
-                this.page.identifier = "ghost-{{comment_id}}"
-            };
-            (function () {
-                var d = document, s = d.createElement('script');
-                s.src = 'https://jacobruan.disqus.com/embed.js';
-                s.setAttribute('data-timestamp', +new Date());
-                (d.head || d.body).appendChild(s);
-            })();
-        </script>
-    </section>
-    
+<section class="article-comments gh-canvas">
+
+    <link rel="stylesheet" href="https://unpkg.com/disqusjs@1.3/dist/disqusjs.css">
+    <script src="https://unpkg.com/disqusjs@1.3/dist/disqus.js"></script>
+
+    <div id="disqus_thread"></div>
+    {{!--
+    <script>
+        var disqus_config = function () {
+            this.page.url = "{{url absolute="true"}}";
+            this.page.identifier = "ghost-{{comment_id}}"
+        };
+        (function () {
+            var d = document, s = d.createElement('script');
+            s.src = 'https://jacobruan.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+        })();
+    </script> --}}
+
+    <script>
+        var dsqjs = new DisqusJS({
+            shortname: 'jacobruan',
+            siteName: 'jacobruan',
+            identifier: 'ghost-{{comment_id}}',
+            url: '{{url absolute="true"}}',
+            title: '',
+            api: 'https://jacobruan.com/disqus/api/',
+            apikey: 'SJ2P2XHjO5wmQFEUjGA0zATzSO8RRS8pJdE9KEC6aYwMH41DhPsslocGzrggikrs',
+            admin: 'disqus_E1aDQU85Eu',
+            adminLabel: 'Jacob'
+        });
+    </script>
+
+</section>
 
 </article>
 
