@@ -52,9 +52,9 @@ production stylesheet in assets/built/screen.css
      */
 
     /* Fonts */
-    --font-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-    --font-serif: Georgia, Times, serif;
-    --font-mono: Menlo, Courier, monospace;
+    --font-sans-serif: -apple-system, BlinkMacSystemFont, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    --font-serif: STZhongsong, Georgia, "Times New Roman", Times, PMingLiu, STSong, SimSun, "WenQuanYi Bitmap Song", "Noto Serif CJK", serif;
+    --font-mono: JetBrainsMono, "Source Code Pro", Monaco, Menlo, Consolas, "Courier New", Courier, monospace;
 
 }
 
@@ -596,6 +596,8 @@ body:not(.gh-head-open) .gh-burger:hover .gh-burger-inner::after {
     margin: 0 0 0.4em;
     font-size: 2.4rem;
     transition: color 0.2s ease-in-out;
+    font-family: var(--font-serif);
+
 }
 
 .no-image .post-card-title {
@@ -818,6 +820,7 @@ make sure this only happens on large viewports / desktop-ish devices.
 
 .article-title {
     color: color-mod(var(--color-darkgrey) l(-5%));
+    font-family: var(--font-serif);
 }
 
 .article-excerpt {
